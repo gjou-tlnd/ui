@@ -12,12 +12,10 @@
     "lint:style": "sass-lint -v -q",
     "lint:es": "eslint --config ../../.eslintrc --ignore-path ../../.eslintignore src",
     "lint": "npm run lint:es && npm run lint:style",
-    "prepare": "rimraf ./lib && babel -d lib ./src/ --ignore 'src/**/*.stories.js','src/**/*.test.js' && node ./build-sass.js",
-    "sass": "node ./build-sass.js",
+    "prepare": "rimraf ./lib && babel -d lib ./src/ --ignore 'src/**/*.stories.js','src/**/*.test.js' && cpx -v \"./src/**/*.scss\" lib",
     "start": "start-storybook -p 6006",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "cpx": "cpx \"./src/**/*.scss\" ./lib",
     "build:dist": "node tools/build.js",
     "serve:dist": "npx http-server dist --cors -c-1",
     "build:serve:dist": "npm run build:dist && npm run serve:dist"
