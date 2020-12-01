@@ -1,0 +1,13 @@
+$module: 'dataviz-tooltip';
+
+.#{$module} {
+	padding: 12px;
+	border-radius: 4px;
+	background: rgba(0, 0, 0, 0.8);
+	color: $white;
+	list-style-type: none;
+
+	&__value {
+		color: $scooter;
+	}
+}
